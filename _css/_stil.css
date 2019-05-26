@@ -1,0 +1,154 @@
+/* genel */
+* {
+	padding: 0px;
+	margin: 0px;
+}
+.padding0
+{
+	padding:0px !important;
+}
+body {
+	background: #bbb;
+	height: 100%;
+}
+#mesaj div.alert {
+	width: 400px;
+	height: auto;
+	position: fixed;
+	top: 100px;
+	left: 50%;
+	margin-left: -200px;
+	z-index: 99999;
+}
+#mesaj #alert {
+	opacity: .8;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	z-index: 99998;
+}
+#site, header, #baslik, #giris {
+	position: relative;
+}
+/* site */
+#site {
+	background: #F5F5F5;
+	padding: 0px;
+	margin: 60px auto 10px;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+}
+.radius0
+{
+	border-radius:0px !important;
+}
+/* header */
+header {
+	height: 200px;
+	background: rgb(176, 65, 62) linear-gradient(to bottom, rgb(23, 56, 88) 0px, rgb(35, 87, 137) 100%);
+}
+
+footer {
+	clear: both;
+	color: #fff;
+	background: rgb(176, 65, 62) linear-gradient(to bottom, rgb(23, 56, 88) 0px, rgb(35, 87, 137) 100%);
+}
+#baslik {
+	top: 20px;
+	left: 50px;
+}
+#baslik img {
+	float: left;
+	margin-right: 20px;
+}
+#baslik .site_adi {
+	color: #eee;
+	font-size: 5em;
+	font-weight: bold;
+	text-shadow: 0px 5px 2px rgba(0, 0, 0, 0.6);
+	letter-spacing: 5px;
+}
+#baslik .site_slogan {
+	color: #ccc;
+	font-size: 1em;
+	text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+	letter-spacing: 13px;
+}
+/* sayfa yolu */
+#syolu {
+	border-bottom: 1px solid #dedede;
+	font-size: .8em;
+}
+#syolu ul {
+	margin: 0px;
+}
+/* icerik-aside-article-slider*/
+#icerik {
+	background: #fff;
+}
+#icerik, aside {
+	float: left;
+}
+aside {
+	width: 25%;
+	padding: 15px 10px;
+}
+#icerik.kucuk {
+	width: 75%;
+	border-left: 1px solid #dedede;
+}
+#icerik.buyuk {
+	width: 100%;
+}
+#slider {
+	background: #f5f5f5;
+	overflow: hidden;
+	margin: -10px;
+}
+#slider img {
+	width: 100%;
+	height: auto;
+}
+
+
+footer, #icerik {
+	padding: 10px;
+}
+/* footer */
+.navbar #amenu {
+	display: none;
+}
+.pagination {
+	cursor: pointer;
+}
+
+.btn-file{position:relative;overflow:hidden}
+.btn-file input[type=file]{position:absolute;top:0;right:0;min-width:100%;min-height:100%;font-size:100px;text-align:right;filter:alpha(opacity=0);opacity:0;outline:none;background:white;cursor:inherit;display:block}
+
+@media screen and (max-width:768px) and (min-width:0px) {
+.navbar #amenu {
+	display: block;
+}
+#menu,.gizli {
+	display: none;
+}
+#baslik .site_adi {
+	font-size: 3em;
+}
+#site {
+	width: 100%;
+	margin: 60px auto 0px;
+}
+header {
+	height: 100px;
+}
+#baslik img, #baslik .site_slogan, #slider, aside {
+	display: none;
+}
+#icerik.kucuk {
+	width: 100%;
+	border-left: none;
+}
+}

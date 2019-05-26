@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Yorum Ekle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+</head>
+<body>
+
+  <form id="frm" method="post" action="yorumEkle">
+      <input  name="ana"/>
+      <input name="onay"/>
+      <div class="control has-icons-left has-icons-right">
+        <input class="bulma-calender" name="Tarih" type="date" >
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>
+   
+      </div>
+      
+      <div class="form-group col-md-12">
+        Firma Adı <br>
+          <input name="firma" type="text" required class="form-control" value="" placeholder="Firma Adı" required/>
+      </div>
+       <div class="form-group col-md-12">
+        Ad Soyad <br>
+          <input name="adsoyad" type="text" required class="form-control" placeholder="Ad Soyad" required/>
+      </div>
+       <div class="form-group col-md-12">
+        Ünvan <br>
+          <input name="unvan" type="text" required class="form-control" placeholder="Ünvan" required/>
+      </div>
+      <div class="form-group col-md-12">
+        Başlık <br>
+          <input name="baslik" type="text" required class="form-control" placeholder="İçerik başlığı..." />
+      </div>
+      <div class="form-group col-md-12">
+        Metin <br>
+          <textarea class="form-control" name="metin"></textarea>
+      </div>
+      <div class="form-group col-md-12">
+        <button type="submit" class="btn btn-primary">Ekle</button>
+      </div>
+      
+  </form>
+
+</body>
