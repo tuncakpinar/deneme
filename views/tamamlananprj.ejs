@@ -1,0 +1,14 @@
+<%- contentFor('title') %>
+Tamamlanan Projeler
+<%- contentFor('body') %>
+<% tprj.forEach(function(item){ %>
+    <div class="col-md-4">
+        <h4><%= item.baslik %></h4>
+        <a data-title="<%= item.aciklama %>">
+            <img src="uploads/<%= item.resim %>"/>
+        </a>
+        <div style="margin-top:20px;">
+            <button type="submit" class="btn btn-info"><a href="_yorumekle">Yorum Ekle</a></button>
+        </div>
+    </div>
+<% }); %>

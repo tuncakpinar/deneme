@@ -1,0 +1,37 @@
+<ul>
+    <li><a class="aktif" href="anasayfa">Anasayfa </a></li>
+     <% if (user && user.yetki == 1) { %> 
+        <li><a  href="#">Admin </a>
+            <ul>
+                <li><a href="_uyeler">Üyeler </a></li>
+                <li><a href="referanslar">Referanslar </a></li>
+                <li><a href="_slider">Slider </a></li>
+                <li><a href="_yazilar">Yazılar </a></li>
+                <li><a href="asizdengelenler">Sizden Gelenler </a></li>
+                <li><a href="_projeler">Projeler </a></li>
+                <li><a href="_aportfoylerim">Portföylerim </a></li>
+
+
+            </ul>
+        </li>
+     <% } %> 
+    <li><a  href="#">Referanslar </a>
+        <ul>
+            <li><a href="bireysel-referanslar">Bireysel </a></li>
+            <li><a href="kurumsal-referans">Kurumsal </a></li>
+        </ul>
+    </li>
+    <li><a href="yazilar ">Yazılar </a></li>
+    <li><a href="# ">Projeler </a>
+        <ul>
+            <li><a href="devamednprj">Devam Eden Projeler </a></li>
+            <li><a href="tamamlananprj">Tamamlanan Projeler </a></li>
+        </ul>
+    </li>
+    <li><a href="yazilar ">Yazılar </a></li>
+
+    <li><a href="sizdengelenler">Sizden Gelenler </a></li>
+    <li><a href="portfoylerim">Portföylerim </a></li>
+    <li><a href="hakkimizda">Hakkımda </a></li>
+    <li><a href="iletisim">İletişim </a></li>
+</ul>

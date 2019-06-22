@@ -1,0 +1,31 @@
+<%- contentFor('title') %>
+Üyeler
+<%- contentFor('body') %>
+
+    <section id="icerik" class="buyuk">
+           
+        <h4 class="well"> Uyeler <p class="pull-right"> <a href="_uyeler"><i class="fa fa-fw fa-chevron-left"></i> Geri</a></p></h4>
+        <% uye.forEach(function(item){ %>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="col-md-2">
+                    <img class="img-thumbnail img-responsive" src="uploads/<%= item.resim %>"/>
+                </div>
+                <div class="col-md-10">
+                    <h4><%= item.adi %>
+                    <p class="pull-right">
+                    <a class="text-info" title="Güncelle" href="_uyedznl?id=<%= item.id %>"><i class="fa fa-pencil"></i></a>
+                        <a class="btn-ajax-confirm text-danger" frm="uyeSil" data-id="<%= item.id %>" title="Sil" style="cursor:pointer;"><i class="fa fa-fw fa-times"></i></a>
+                        
+                        <a class="btn-ajax-confirm text-<%= item.onay ? 'danger' : 'success'%>" frm="uyeOnayla" data-id="<%= item.id %>" title="<%= item.onay ? 'Onay Kaldır' : 'Onayla'%>" style="cursor:pointer;"><i class="fa fa-<%= item.onay ? 'circle-o' : 'check'%>"></i></a>
+                    </p>
+                    </h4>
+                    <div class="col-md-4"><i class="fa fa-briefcase"></i> YETKİ<br><%= item.yetki %></div>
+                    <div class="col-md-4"><i class="fa fa-<?=$uye['aktif']?'link':'unlink';?>"></i>
+                    E-POSTA<br><%= item.email %></div>
+                    <div class="col-md-4"><i class="fa fa-clock-o"></i> KAYIT TARİHİ<br><%= item.tarih %></div>
+                </div>
+            </div>
+        </div>
+        <% }); %>        
+    </section>

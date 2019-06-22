@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="_css/_stil.css">
+    <link rel="stylesheet" href="_css/_menu.css">
+    <link rel="stylesheet" href="_css/bootstrap-3.3.1.min.css">
+    <link rel="stylesheet" href="_css/bootstrap-theme-3.3.1.min.css">
+    <link rel="stylesheet" href="_css/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="_css/font-awesome.min.css">
+    <link rel="stylesheet" href="_css/jquery.datetimepicker.css">
+    <link rel="stylesheet" href="_css/lightbox.min.css">
+    <title><%= title %></title>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top navbar-default" role="navigation">
+
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
+                        class="icon-bar"></span><span class="icon-bar"></span> <span class="icon-bar"></span></button>
+            <a class="navbar-brand" href="anasayfa"> <i class="fa fa-bolt"></i> Arif Karakaya</a></div>
+
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="iletisim"><i class="fa fa-phone-square"></i> İletişim</a></li>
+            </ul>
+            <% if (user) { %>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a>Hoşgeldin, <%= user.adi %></a>
+                    </li>
+                    <li><a href="profilim?id=<%= user.id %>"><i class="fa fa-user "></i> Profilim</a></li>
+                    <li><a style="cursor:pointer;" id="btnCikis"><i class="fa fa-power-off"></i> Çıkış</a></li>
+                </ul>
+            <% } %>
+            <!-- /sağ bölüm-->
+            <div id="giris">
+                <% if (!user) { %>
+                    <form class="navbar-form navbar-right" role="form" id="frmGiris" method="post">
+                        <input name="frm" value="giris" type="hidden"/>
+                        <div class="form-group">
+                            <input name="email" required type="email" placeholder="Email"
+                                   class="form-control input-sm radius0">
+                        </div>
+                        <div class="form-group">
+                            <input name="sifre" required type="password" placeholder="Şifre"
+                                   class="form-control input-sm radius0">
+                        </div>
+                        <div class="btn-group">
+                            <button id="btnGiris" type="submit" class="btn btn-info btn-sm radius0"><i
+                                        class="fa fa-check-square-o"></i> Giriş
+                            </button>
+                            <a href="unuttum" type="button" class="btn btn-info btn-sm radius0"> <i
+                                        class="fa fa-question"></i> Unuttum </a>
+                            <a href="yeniUye" type="button" class="btn btn-info btn-sm radius0"> <i
+                                        class="fa fa-user"></i>
+                                Yeni Üye </a>
+                        </div>
+                    </form>
+                <% } %>
+            </div>
+        </div>
+        <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.navbar -->
+
+<section id="site" class="container">
+    <header>
+        <div id="baslik">
+            <img src="_css/_rsm/logo.png" width="122" height="122">
+            <div class="site_adi">Arif Karakaya</div>
+            <div class="site_slogan">Yapı Mimarınız</div>
+        </div>
+        <nav id="menu" class="navbar-inverse">
+            <% include _inc/menu %>
+        </nav>
+    </header>
+    <article>
+        <%- body %>
+    </article>
+    <!--
+      <?php require('_inc/_sayfayolu.php'); ?>
+      <?php require('_sayfa.php'); ?> -->
+
+    <footer class="row text-center" style="margin:0px;">
+        <div class="col-md-4">
+            <h4 class="well" style="color:#09F">DÖVİZ KURLARI</h4>
+            <p>
+                <script type="text/javascript">
+                    var para_birimleri = "USD-EUR-GBP";
+                    var arka_plan = "FFFFFF";
+                    var cerceve = "333333";
+                    var kutucuk = "FFFFFF";
+                    var piyasa_baslik = "FFFFFF";
+                    var tur_baslik = "999999";
+                    var fiyat_baslik = "CC3300";
+                    var kutu_kose = "kare";
+                    var genislik = "300";
+                    var bankalar = "acik";
+                    var paylasim = "kapali";
+                </script>
+            <div style="width:120px;font-size:12px;text-align:right;"><a name="piyasadoviz" target="_blank"
+                                                                         href="http://www.piyasadoviz.com/tcmb">merkez
+                    bankası</a></div>
+            <script type="text/javascript" charset="iso-8859-9" src="http://eklenti.piyasadoviz.com/doviz.js"></script>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h4 class="well" style="color:#09F">ÖNEMLİ HİSSE SENETLERİ</h4>
+            <p>
+                <iframe frameborder="0" scrolling="no" width="439" allowtransparency="true" marginwidth="0"
+                        marginheight="0"
+                        src="https://ssleqrates.forexprostools.com/index.php?force_lang=10&pairs_ids=23641;22982;23552;22983;23640;23349;23343;&header-text-color=%23FFFFFF&curr-name-color=%230059b0&inner-text-color=%23000000&green-text-color=%232A8215&green-background=%23B7F4C2&red-text-color=%23DC0001&red-background=%23FFE2E2&inner-border-color=%23CBCBCB&border-color=%23cbcbcb&bg1=%23F6F6F6&bg2=%23ffffff&open=hide&change_in_percents=hide&last_update=hide"></iframe>
+            <div style="width:439px;"><span><span style="font-size: 11px;color: #333333;text-decoration: none;"></div>
+            </p>
+
+        </div>
+        <div class="col-md-4 ">
+            <h4 class="well" style="color:#09f">KONUT KREDİSİ HESAPLAMA </h4>
+            <script type="text/javascript" src="_js/kredi.js"></script>
+            <script type="text/javascript">kredipazari_displayCalc();</script>
+        </div>
+        <!-- <?php if($ayarlar['copyright']) {?>
+        <div class="col-lg-12">
+          <hr>
+          <p><?=$ayarlar['copyright'];?></p>
+        </div>
+        <?php }?> -->
+    </footer>
+
+</section>
+
+<script type="text/javascript" src="_js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="_js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="_js/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="_js/jquery.datetimepicker.js"></script>
+<script type="text/javascript" src="_js/bootstrap-progress.js"></script>
+<script type="text/javascript" src="_js/jquery-form.js"></script>
+<script type="text/javascript" src="_js/site.js"></script>
+<script type="text/javascript" src="_js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript" src="_js/lightbox.min.js"></script>
+
+<div id="mesaj" style="display:none;">
+    <div id="alert"></div>
+    <div class="alert" role="alert">
+        <button type="button" class="close"><span aria-hidden="true">&times;</span></button>
+        <p></p></div>
+
+</div>
+<!-- <?php $ifo = null;
+unset($ifo);
+?> -->
+</body>
+</html>

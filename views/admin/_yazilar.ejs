@@ -1,0 +1,41 @@
+<%- contentFor('title') %>
+Yazılar
+
+<%- contentFor('body') %>
+
+
+<section id="icerik" class="buyuk">
+	<h4 class="well"> Yazılar <p class="pull-right"> <a href="_yeniyazi"><i class="fa fa-fw fa-plus"></i> Yeni Yazı</a></p></h4>
+    <table id="datatable" class="table table-striped table-bordered">
+    	<thead>
+        	<tr>
+            	<th class="gizli text-center">ID</th>
+                <th><i class="fa fa-fw fa-puzzle-piece"></i> BAŞLIK</th>
+                <th>GİRİŞ</th>
+            	<th><i class="fa fa-fw fa-pencil"></i> METİN</th>
+                <th class="gizli"><i class="fa fa-fw fa-clock-o"></i> TARİH</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% yzlr.forEach(function(item){ %>
+        	<tr>
+            	<td class="gizli text-center"><%= item.id %></td>
+            	<td><a class="btn" data-toggle="popover" data-placement="bottom" data-title="Giriş" data-content="<%= item.acıklama %>" data-trigger="hover" ><i class="fa fa-fw fa-puzzle-piece"></i> <b><%= item.baslik %></b></a>
+                <p class="pull-right">
+                	
+                    <a class="text-info" title="Güncelle" href="_icerikgncll?id=<%= item.id %>"><i class="fa fa-fw fa-pencil"></i></a>
+                    <a class="btn-ajax-confirm text-danger" frm="icerikSil" data-id="<%= item.id %>" title="Sil" style="cursor:pointer;"><i class="fa fa-fw fa-times"></i></a>
+                    <a class="btn-ajax-confirm text-<%= item.onay ? 'danger' : 'success'%>" frm="yaziOnayla" data-id="<%= item.id %>" title="<%= item.onay ? 'Onay Kaldır' : 'Onayla'%>" style="cursor:pointer;"><i class="fa fa-<%= item.onay ? 'circle-o' : 'check'%>"></i></a>
+                     
+                    
+                </p>
+                
+                </td>
+                <td class="gizli"><%= item.giris %></td>
+                <td class="gizli"><%= item.metin %></td>
+                <td class="gizli"><%= item.tarih %></td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</section>

@@ -1,77 +1,65 @@
-<!DOCTYPE html>
-<html>
+<%- contentFor('title') %>
+Bireysel Referanslar
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>İletişim</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   
-</head>
-<body>
-<section id="icerik" class="buyuk"> 
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;language=tr"></script> 
-  <script type="text/javascript">
-</script> 
-  
-  <div class="row"> 
-    <div class="col-md-6">
-      <h3 class="well well-sm">İletişim Bilgileri</h3>
-      <h4>
-       Arif Karakaya
-      </h4>
-      <p>Mehmet Akif Mahallesi Şahin Caddesi Cumhur Sokak</p>
-      <p><i class="fa fa-phone">02164206970</i></p>
-      <p><i class="fa fa-fax"></i>0216427970</p>
-      <p><i class="fa fa-mobile-phone"></i> 05345754593 </p>
-      <p><i class="fa fa-envelope-o"></i> <a href="mailto:'tuncakpinar@hotmail.com'"></a></p>
-      <iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-      <ul class="list-unstyled list-inline list-social-icons">
-      <li><a  href="#"><i class="fa fa-facebook-square fa-2x"></i></a> </li>
-      <li><a  href="#"><i class="fa fa-linkedin-square fa-2x"></i></a> </li>
-      <li><a  href="#"><i class="fa fa-twitter-square fa-2x"></i></a> </li>
-      <li><a  href="#"><i class="fa fa-google-plus-square fa-2x"></i></a> </li>
-      </ul>
-     
-      <div style="width: 100%;height: 400px;">
-        <div style="width:100%;height:100%" id="map-canvas-yw0"></div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <h3 class="well well-sm">Bize Ulaşın</h3>
-      <form  id="frm" method="post">
-      	<input type="hidden" name="frm" value="iletisim"/>
-        <div class="control-group form-group">
-          <div class="controls">
-            <label>Ad Soyad:</label>
-            <input type="text" class="form-control radius0" name="adi" required />
-            
-          </div>
-        </div>
-        <div class="control-group form-group">
-          <div class="controls">
-            <label>Telefon:</label>
-            <input type="tel" class="form-control radius0" name="tel" required />
-          </div>
-        </div>
-        <div class="control-group form-group">
-          <div class="controls">
-            <label>Email Adresi:</label>
-            <input type="email" class="form-control radius0" name="email" required />
-          </div>
-        </div>
-        <div class="control-group form-group">
-          <div class="controls">
-            <label>Mesaj:</label>
-            <textarea name="mesaj" rows="12" cols="100" class="form-control radius0"  required  maxlength="999" style="resize:none"></textarea>
-          </div>
-        </div>
-        <div id="success"></div>
-        <button type="submit" class="btn btn-info">Mesajı Gönder</button>
-      </form>
-    </div>
-  </div>
+<%- contentFor('body') %>
+<section id="icerik" class="buyuk">
+    
+                <div class="row"> 
+                  <div class="col-md-6">
+                    <h3 class="well well-sm">İletişim Bilgileri</h3>
+                    <h4>
+                     Arif Karakaya
+                    </h4>
+                    <p>Mehmet Akif Mahallesi Şahin Caddesi Cumhur Sokak</p>
+                    <p><i class="fa fa-phone">02164206970</i></p>
+                    <p><i class="fa fa-fax"></i>0216427970</p>
+                    <p><i class="fa fa-mobile-phone"></i> 05345754593 </p>
+                    <p><i class="fa fa-envelope-o"></i> <a href="mailto:'tuncakpinar@hotmail.com'"></a></p>
+                   <div class="col-md-6"><iframe src="https://www.google.com/maps/embed?pb=" width="auto" height="auto" frameborder="0" style="border:0" allowfullscreen></iframe>
+                   </div>
+                    <ul class="list-unstyled list-inline list-social-icons">
+                    <li><a  href="#"><i class="fa fa-facebook-square fa-2x"></i></a> </li>
+                    <li><a  href="#"><i class="fa fa-linkedin-square fa-2x"></i></a> </li>
+                    <li><a  href="#"><i class="fa fa-twitter-square fa-2x"></i></a> </li>
+                    <li><a  href="#"><i class="fa fa-google-plus-square fa-2x"></i></a> </li>
+                    </ul>
+                   
+                    </div>
+                    <div class="col-md-6">
+                      <h3 class="well well-sm">Bize Ulaşın</h3>
+                      <form  id="frm" method="post">
+                          <input type="hidden" name="frm" value="iletisim"/>
+                        <div class="control-group form-group">
+                          <div class="controls">
+                            <label>Ad Soyad:</label>
+                            <input type="text" class="form-control radius0" name="adi" required />
+                            
+                          </div>
+                        </div>
+                        <div class="control-group form-group">
+                          <div class="controls">
+                            <label>Telefon:</label>
+                            <input type="tel" class="form-control radius0" name="tel" required />
+                          </div>
+                        </div>
+                        <div class="control-group form-group">
+                          <div class="controls">
+                            <label>Email Adresi:</label>
+                            <input type="email" class="form-control radius0" name="email" required />
+                          </div>
+                        </div>
+                        <div class="control-group form-group">
+                          <div class="controls">
+                            <label>Mesaj:</label>
+                            <textarea name="mesaj" rows="12" cols="100" class="form-control radius0"  required  maxlength="999" style="resize:none"></textarea>
+                          </div>
+                        </div>
+                        <div id="success"></div>
+                        <button type="submit" class="btn btn-info">Mesajı Gönder</button>
+                      </form>
+                    </div>
+                  </div>
+                </section>
+                
 </section>
 </body>

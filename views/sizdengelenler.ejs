@@ -1,41 +1,32 @@
-<!DOCTYPE html>
-<html>
+<%- contentFor('title') %>
+Sizden Gelenler
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Portföylerim</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://cdn.rawgit.com/download/glyphicons/0.1.0/glyphicons.js"></script>  
-</head>
+<%- contentFor('body') %>
 
-	<body>
-           
-             <div class="panel panel-default"> 
-        		<div class="panel-body">
-            		<div class="col-md-12">
-                            <% szdngln.forEach(function(item){ %>
-              			<h4><a href="#"><%=item.baslik%></a></h4>
-              			<p class="text-danger">
-              				<i class="fa fa-clock-o"></i>
-                              <%=item.tarih%>
-                            
-                              <%=item.firma%>
-                				<i class="fa fa-building"></i> <%=item.firma%>
-                                <%=item.adsoyad%>
-                					<i class="fa fa-user"></i> <%=item.adsoyad%>
-                           
-              			</p>
-              			<div class="row info-list">
-                			<div class="col-sm-12>">
-                    		<p><%=item.metin%></p>
-                   		 	</div>
-             			 </div>
-            		</div>
-      			</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="col-md-12">
+            <% szdngln && szdngln.forEach(function(item){ %>
+            <h4><a href="#"><%= item.baslik %></a></h4>
+            <p class="text-danger">
+                <i class="fa fa-clock-o"></i>
+                <%= item.tarih %>
+
+                <%= item.firma %>
+                <i class="fa fa-building"></i> <%= item.firma %>
+                <%= item.adsoyad %>
+                <i class="fa fa-user"></i> <%= item.adsoyad %>
+
+            </p>
+            <div class="row info-list">
+                <div class="col-sm-12>">
+                    <p><%= item.metin %></p>
+                </div>
+                <div style="margin-left: 1000px;">
+                    <a href="_yorumekle" class="btn btn-lg btn-info">Yorum Ekle</a>
+                </div>
             </div>
             <% }); %>
-            <a href="yorumekle" class="btn btn-lg btn-info">Yorum Ekle</a>
-        </body>
-   
+        </div>
+    </div>
+</div>
